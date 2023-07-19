@@ -1,0 +1,25 @@
+ls/dir
+pwd
+cd 
+cd ..
+cd ../.. (used to come back twice)
+clear/cls
+cd / **—> root director**
+cd ~
+cd <folder/folder/folder> ** <> means to add your own folder names that exist on your computer.
+mkdir <folder>
+rmdir <folder>
+del index.html
+start <folder>
+echo > index.html to create file
+start index.html
+open . **for windows use: start .
+rename index.html about.html
+The command rename index.html about.html renames the file index.html to about.html.
+
+start "C:\Program Files\Google\Chrome\Application\chrome.exe"
+
+
+
+
+rm filename (for deleting file)

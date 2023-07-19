@@ -1,0 +1,36 @@
+npm init
+npm install express
+npm install pug
+create two folders namely static and views
+
+
+--------------------
+// Starting template
+// Importing requirements
+const express = require('express');
+const path = require('path');
+const port = 8000;
+const app = express();
+
+// express stuff
+app.use('/static',express.static('static'))
+app.use(express.urlencoded())
+
+// setting PUG stuff in this app
+app.set('view engine', 'pug')
+app.set('views', path.join(__dirname, 'views'))
+
+// routing
+app.get("/", (req,res)=> {
+  params = {
+    "Title" : 'Dance Academy',
+    "Message": 'This is my first dance academy page'
+  }
+  res.status(200).render('index.pug', params)
+})
+
+// End 
+
+app.listen(port , ()=> {
+  console.log(`This app has been loaded successfully via port ${port}`)
+})

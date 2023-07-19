@@ -1,0 +1,16 @@
+once you have cloned the repo in your directory
+open vs code and type npm install
+if it shows vulnerablities then type
+npm audit fix
+if still showing vulnurabilities
+review your file and 
+type npm audit fix --force
+after that type
+npm update
+or you can change manually the version of your libraries by going into 
+react.json file and then again insatll npm using
+npm install
+then run your app
+npm start
+go to console of you browser look for any error 
+if no error then push your app to your master repo 

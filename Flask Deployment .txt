@@ -1,9 +1,0 @@
-upload your files on github
-create account on pythonanywhere
-then clone the repository using HTTPS link in bash terminal of pythonanywhere
-then go to web app tab on the dashboard
-then create manual configuration
-select your python version
-scroll down and give your file path
-then go to https://help.pythonanywhere.com/pages/Flask
-and follow the documentation means that make venv and install  requirement.txt

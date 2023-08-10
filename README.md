@@ -926,6 +926,9 @@ git checkout -b branchname // (short hand to create and shift to that created br
 git merge branchname // (to merge the created branch with the master branch)
 ```
 ```bash
+git reset --merge commit_name // (to merge the code with the given commit name)
+```
+```bash
 git status -s // (tells small status for working tree)
 ```
 ```bash

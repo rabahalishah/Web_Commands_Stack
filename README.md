@@ -946,6 +946,12 @@ git diff --staged //  (compares staging area with last commit)
 ```bash
 git commit -a -m “msg” // (skip staging area and direct commit the changes)
 ```
+```bash
+git stash save "optional message" // (This command is used for tempory store your changes in stash file. For example: you are in master branch and made some little changes then you think you need to go to other branch but you cannot go until you commit the changes in master branch. Its not logical to commit for very little changes. So in order to temporary store your changes we use git stash. This command remove your changes and store them into the stash area. so that we can change the branches.
+```
+```bash
+git stash pop //(The git stash pop command will take the content from the stash file and then apply those changes to our current working file) 
+```
 
 ### How to upload projects on Git hub
 click on plus sign on github

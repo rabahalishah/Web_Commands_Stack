@@ -952,6 +952,9 @@ git stash save "optional message" // (This command is used for tempory store you
 ```bash
 git stash pop //(The git stash pop command will take the content from the stash file and then apply those changes to our current working file) 
 ```
+```bash
+git reset //(if you have mistakenly added any file using git add then you can remove it by using this command) 
+```
 
 ### How to upload projects on Git hub
 click on plus sign on github

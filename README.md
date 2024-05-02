@@ -947,13 +947,22 @@ git diff --staged //  (compares staging area with last commit)
 git commit -a -m “msg” // (skip staging area and direct commit the changes)
 ```
 ```bash
-git stash save "optional message" // (This command is used for tempory store your changes in stash file. For example: you are in master branch and made some little changes then you think you need to go to other branch but you cannot go until you commit the changes in master branch. Its not logical to commit for very little changes. So in order to temporary store your changes we use git stash. This command remove your changes and store them into the stash area. so that we can change the branches.
+git stash save "optional message" OR git stash // (This command is used for tempory store your changes in stash file. For example: you are in master branch and made some little changes then you think you need to go to other branch but you cannot go until you commit the changes in master branch. Its not logical to commit for very little changes. So in order to temporary store your changes we use git stash. This command remove your changes and store them into the stash area. so that we can change the branches.
 ```
 ```bash
 git stash pop //(The git stash pop command will take the content from the stash file and then apply those changes to our current working file) 
 ```
 ```bash
+git stash clear //(The git stash clear command will clear the stash memory) 
+```
+```bash
 git reset //(if you have mistakenly added any file using git add then you can remove it by using this command) 
+```
+```bash
+git restore --staged filename.extension // this command will be used to get back on step from git add . OR to undo add file
+```
+```bash
+git reset commit_Id //This command is used to switched to the given commit id and all commits above will be remove OR you can say this command can be used to delete the history of commits
 ```
 
 ### How to upload projects on Git hub
@@ -1043,6 +1052,55 @@ git remote add origin git@github.com:alexpchin/<reponame>.git
 ```bash
 git push -u origin master
 ```
+# Removing any commit
+```bash
+git reset commit_id //here commit Id would be the id of the commit which is below the commit that you want to delete. Like if there are 5 commits and you want to delete the 3rd commit then you cannot directly delete it. you have to copy the id of the 4th commit using >git log command and the provide it to > git reset commit_Id
+```
+# Connecting the existing project with git repo
+
+```bash
+git remote add origin your_repo_url
+```
+Now follow rest of the steps such as git add . etc.
+
+# Contribution to some open source
+1 first fork that project to your profile
+2 git clone url_of_forked_repo // now clone that fork repo from you account
+3 create a new branch
+4 git remote add upstream url_of_the_project_you_want_to_contribute // now add the url of the actual project with your origin using upstream command (upstream is the account/organization from where you forked the project and origin is the url of your account)
+5 make changes whatever you want and push the code
+6 Now the PR will be made from you origin branch (the branch you created on your account, and you are push the code from the branch to the main branch of the upstream)
+7 If the PR will be accepted then your code will be merged with the main branch of upstream
+
+**NOTE**: Now there is problem you might have noticed. The problem is that your main branch of origin has not merged with the changes that you committed thorugh your branch of origin. Cause you pushed the code to the upstream main branch, not to the main branch. So how can we make sure that main branch of our origin and main branch of upstream remain synchronized?
+
+## Solution for synchronizing the origin main branch with upstream main branch
+> git checkout main (switched to the main branch, here there will be no changes seen)
+> git fetch --all --prune (This commit will fetch all the commits even the one that are deleted)
+> git reset --hard upstream/main (here we setting our origin main branch to commit all changes from the upstream main branch)
+> git push origin main  (uptil now we have imported all the commits only, we did't pushed it...now we have pushed it
+
+**Congratulations!** Now your origin main branch exactly have the same content as upstream main branch
+
+## Method 2:
+we can all do only with one single command that we have done above:
+> git pull upstream main
+# Best practices for making contribution the project on git
+- Never ever push changes to the main branch
+- Never ever make more than one pull request from a single branch
+- Means always create a new branch for every new feature and make each pull request per new branch. The reason is that if you wont create a new branch, your all commits will be pushed to only main branch and it will make harder to discuss the progress of the project.
+- Never make a single PR for more than one feature you added
+
+
+# how to merge multple commits
+Let say you have made several commits but didnt pushed the code. And you want to merge some of the commits in a single commit then you can do like that:
+
+> git rebase -i commit_id (here -i means interactive, after pressing enter you will get enter into the interactive mode where you can made changes to the commits history, :x is used to get exit of the interactive mode)
+![image](https://github.com/rabahalishah/Web_Commands_Stack/assets/117630286/88f4cd0c-60b9-4dfc-93ef-964ae38de890)
+here using "s" means squash all the commits started with letter s will be merged with the "pick" commit which is above them. This happens cause all the commits are inter linked with each other
+
+# Git Cheat Sheet
+https://education.github.com/git-cheat-sheet-education.pdf
 
 # 12 PUG setup
 ```bash
@@ -1150,3 +1208,5 @@ for example your data folder have a file db.json
 }
 
 ```
+
+

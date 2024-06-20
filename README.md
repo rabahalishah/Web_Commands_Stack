@@ -1099,6 +1099,12 @@ Let say you have made several commits but didnt pushed the code. And you want to
 ![image](https://github.com/rabahalishah/Web_Commands_Stack/assets/117630286/88f4cd0c-60b9-4dfc-93ef-964ae38de890)
 here using "s" means squash all the commits started with letter s will be merged with the "pick" commit which is above them. This happens cause all the commits are inter linked with each other
 
+# how to push code to a secured repo using app password or access token:
+first set the url and then push the code:
+```bash
+git remote set-url origin https://<username>:<accessToken>@bitbucket.org/<repo>.git
+```
+
 # Git Cheat Sheet
 https://education.github.com/git-cheat-sheet-education.pdf
 
